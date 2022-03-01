@@ -1,14 +1,18 @@
 <?php
 
-use Vendor\IController;
+namespace Vendor;
+
+use Filter;
+use Handler;
+use Request;
 
 /**
  * Контроллер
  */
-class CustomerController implements IController
+class CustomerController extends Application implements IController
 {
     /**
-     * Запустить 
+     * Запустить
      * @return void
      */
     public function run(): void

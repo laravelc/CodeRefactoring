@@ -1,21 +1,25 @@
 <?php
 
-use Vendor\ITest;
+namespace Vendor;
+
+use Filter;
+use Handler;
+use Request;
 
 /**
  * Контроллер
  */
-class CustomerTest implements ITest
+class CustomerTest extends Application implements ITest
 {
     /**
-     * Запустить 
+     * Запустить
      * @return void
      */
     public function run(): void
     {
         $request = new Request();
 
-        (new  Handler())->handle(
+        (new  Handler(new MockeryProvider()))->handle(
             new Filter(
                 $request->getCustomerIds(),
                 $request->getYear(),

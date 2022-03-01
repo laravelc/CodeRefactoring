@@ -1,5 +1,6 @@
 <?php
 
+use Vendor\IProvider;
 use Vendor\Provider;
 
 class Handler implements IHandler
@@ -7,14 +8,14 @@ class Handler implements IHandler
     /**
      * Провайдер
      */
-    private Provider $provider;
+    private IProvider $provider;
 
     /**
      * Конструктор
      *
-     * @param Provider|null $provider
+     * @param IProvider|null $provider
      */
-    public function __construct(Provider $provider = null)
+    public function __construct(IProvider $provider = null)
     {
         $this->provider = $provider == null ? new Provider() : $provider;
     }
@@ -25,7 +26,7 @@ class Handler implements IHandler
      * @param Filter $filter
      * @return void
      */
-    public function handle(Filter $filter)
+    public function handle(IFilter $filter)
     {
         $query = sprintf(
             "SELECT c.*  (SELECT count(*) FROM books_customers bc WHERE bc.customer_id = c.id ) as book_count FROM customers c 

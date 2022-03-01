@@ -1,6 +1,8 @@
 <?php
 
+use Vendor\IFilter;
+
 interface IHandler
 {
-    public function handle(Filter $filter);
+    public function handle(IFilter $filter);
 }

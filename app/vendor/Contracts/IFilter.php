@@ -2,7 +2,9 @@
 
 namespace Vendor;
 
+/**
+ * Фильтр
+ */
 interface IFilter
 {
-
 }

@@ -2,6 +2,9 @@
 
 namespace Vendor;
 
+/**
+ * Провайдер
+ */
 interface IProvider
 {
     /**

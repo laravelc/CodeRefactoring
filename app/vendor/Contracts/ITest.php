@@ -7,5 +7,4 @@ namespace Vendor;
  */
 interface ITest
 {
-
 }
