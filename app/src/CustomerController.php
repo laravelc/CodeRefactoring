@@ -2,19 +2,16 @@
 
 namespace App;
 
-use App\Customer\Filter;
-use App\Customer\Handler;
-use App\Customer\Request;
+use App\Customer\CustomerFilter;
+use App\Customer\CustomerHandler;
+use App\Customer\CustomerRequest;
 use App\Vendor\Contracts\IController;
-
-include_once __DIR__ . "/../vendor/bootstrap.php";
-
 
 
 /**
  * Контроллер
  */
-class CustomerController  implements IController
+class CustomerController implements IController
 {
     /**
      * Запустить
@@ -22,10 +19,10 @@ class CustomerController  implements IController
      */
     public function run(): void
     {
-        $request = new Request();
+        $request = new CustomerRequest();
 
-        (new  Handler())->handle(
-            new Filter(
+        (new  CustomerHandler())->handle(
+            new CustomerFilter(
                 $request->getCustomerIds(),
                 $request->getYear(),
                 $request->getAuthor()

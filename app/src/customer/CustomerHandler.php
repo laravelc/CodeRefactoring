@@ -2,13 +2,12 @@
 
 namespace App\Customer;
 
-
-
+use App\Vendor\Contracts\IFilter;
 use App\Vendor\Contracts\IHandler;
 use App\Vendor\Contracts\IProvider;
 use App\Vendor\Provider;
 
-class Handler implements IHandler
+class CustomerHandler implements IHandler
 {
     /**
      * Провайдер
@@ -28,7 +27,7 @@ class Handler implements IHandler
     /**
      * Выполнить
      *
-     * @param Filter $filter
+     * @param CustomerFilter $filter
      * @return void
      */
     public function handle(IFilter $filter)
@@ -55,10 +54,10 @@ class Handler implements IHandler
     {
         $arr = [];
 
-        foreach ($this->provider->getObjects($query, Model::class) as $customer) {
-            $arr[] = $customer;
+        foreach ($this->provider->getObjects($query, CustomerModel::class) as $customer) {
+            $arr[] = $customer->render();
         }
 
-        return implode('', $arr);
+        return implode('<br>', $arr);
     }
 }

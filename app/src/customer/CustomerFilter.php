@@ -7,7 +7,7 @@ use App\Vendor\Contracts\IFilter;
 /**
  * Фильтр
  */
-class Filter implements IFilter
+class CustomerFilter implements IFilter
 {
     /**
      * @var array|mixed
@@ -39,8 +39,8 @@ class Filter implements IFilter
     public function __construct($customer_ids, array $year, int $author)
     {
         $this->customer_ids = $customer_ids;
-        $this->year_start = $year[0];
-        $this->year_end = $year[1];
+        $this->year_start = $year[0] ?? 0;
+        $this->year_end = $year[1] ?? 0;
         $this->author = $author;
     }
 

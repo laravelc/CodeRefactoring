@@ -5,7 +5,7 @@ namespace App\Customer;
 /**
  * Объект запроса
  */
-class Request
+class CustomerRequest
 {
     /**
      * @var array|mixed
@@ -22,12 +22,14 @@ class Request
      */
     private int $author;
 
-
+    /**
+     * Конструктор
+     */
     public function __construct()
     {
-        $this->customer_ids = $_GET['customer_ids'];
-        $this->year = $_GET['year'];
-        $this->author = $_GET['author'];
+        $this->customer_ids = $_GET['customer_ids'] ?? [];
+        $this->year = $_GET['year'] ?? [];
+        $this->author = $_GET['author'] ?? 0;
     }
 
     /**

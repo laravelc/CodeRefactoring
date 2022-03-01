@@ -4,6 +4,9 @@ namespace App\Vendor;
 
 use App\Vendor\Contracts\IProvider;
 
+/**
+ * Провайдер данных
+ */
 class Provider implements IProvider
 {
     /**
