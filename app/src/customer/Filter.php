@@ -1,6 +1,8 @@
 <?php
 
-use Vendor\IFilter;
+namespace App\Customer;
+
+use App\Vendor\Contracts\IFilter;
 
 /**
  * Фильтр

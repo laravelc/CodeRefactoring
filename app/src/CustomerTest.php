@@ -1,15 +1,19 @@
 <?php
 
-namespace Vendor;
+namespace App;
 
-use Filter;
-use Handler;
-use Request;
+use App\Customer\Filter;
+use App\Customer\Handler;
+use App\Customer\Request;
+use App\Vendor\Contracts\ITest;
+
+include_once __DIR__ . "/../vendor/bootstrap.php";
+
 
 /**
  * Контроллер
  */
-class CustomerTest extends Application implements ITest
+class CustomerTest implements ITest
 {
     /**
      * Запустить

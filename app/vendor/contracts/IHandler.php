@@ -1,6 +1,6 @@
 <?php
 
-use Vendor\IFilter;
+namespace App\Vendor\Contracts;
 
 interface IHandler
 {

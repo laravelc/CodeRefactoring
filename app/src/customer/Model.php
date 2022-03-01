@@ -1,7 +1,11 @@
 <?php
 
-use Vendor\IModel;
-use Vendor\IRenderable;
+namespace App\Customer;
+
+
+
+use App\Vendor\Contracts\IModel;
+use App\Vendor\Contracts\IRenderable;
 
 class Model implements IModel, IRenderable
 {
@@ -30,6 +34,7 @@ class Model implements IModel, IRenderable
      * @var int
      */
     private int $books_count;
+
     /**
      * Конструктор
      *
@@ -49,6 +54,6 @@ class Model implements IModel, IRenderable
      */
     public function render(): string
     {
-        return sprintf('<a href="/customers/?id=%d\">%s</a>', $this->id, $this->customer_name) ;
+        return sprintf('<a href="/customers/?id=%d\">%s</a>', $this->id, $this->customer_name);
     }
 }

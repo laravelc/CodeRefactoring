@@ -1,7 +1,12 @@
 <?php
 
-use Vendor\IProvider;
-use Vendor\Provider;
+namespace App\Customer;
+
+
+
+use App\Vendor\Contracts\IHandler;
+use App\Vendor\Contracts\IProvider;
+use App\Vendor\Provider;
 
 class Handler implements IHandler
 {

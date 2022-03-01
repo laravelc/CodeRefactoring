@@ -1,6 +1,8 @@
 <?php
 
-namespace Vendor;
+namespace App\Vendor;
+
+use App\Vendor\Contracts\IProvider;
 
 class Provider implements IProvider
 {

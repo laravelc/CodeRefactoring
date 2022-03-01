@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor;
+namespace App\Vendor\Contracts;
 
 /**
  * Провайдер
@@ -14,5 +14,5 @@ interface IProvider
      * @param string $class
      * @return mixed
      */
-    public function getObjects(string $query, string $class): mixed;
+    public function getObjects(string $query, string $class): array;
 }

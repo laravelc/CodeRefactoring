@@ -1,7 +1,8 @@
 <?php
 
-namespace Vendor;
+namespace App\Vendor;
 
+use App\Vendor\Contracts\IDataManager;
 use Generator;
 
 class DbManager implements IDataManager

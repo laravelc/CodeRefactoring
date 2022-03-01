@@ -1,6 +1,8 @@
 <?php
 
-namespace Vendor;
+namespace App;
+
+use App\Vendor\Contracts\IProvider;
 
 /**
  * Провайдер для тестирования
