@@ -9,5 +9,12 @@ use Generator;
  */
 interface IDataManager
 {
+    /**
+     * Получить модели
+     *
+     * @param string $query
+     * @param string $class
+     * @return Generator
+     */
     public function getModels(string $query, string $class): Generator;
 }

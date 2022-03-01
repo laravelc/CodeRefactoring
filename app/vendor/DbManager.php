@@ -11,8 +11,14 @@ use Generator;
  */
 class DbManager implements IDataManager
 {
+    /**
+     * @var IProvider
+     */
     private IProvider $provider;
 
+    /**
+     * @param IProvider $provider
+     */
     public function __construct(IProvider $provider)
     {
         $this->provider = $provider;
