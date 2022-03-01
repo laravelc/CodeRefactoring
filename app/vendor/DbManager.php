@@ -3,6 +3,7 @@
 namespace App\Vendor;
 
 use App\Vendor\Contracts\IDataManager;
+use App\Vendor\Contracts\IProvider;
 use Generator;
 
 /**
@@ -10,9 +11,9 @@ use Generator;
  */
 class DbManager implements IDataManager
 {
-    private Provider $provider;
+    private IProvider $provider;
 
-    public function __construct(Provider $provider)
+    public function __construct(IProvider $provider)
     {
         $this->provider = $provider;
     }

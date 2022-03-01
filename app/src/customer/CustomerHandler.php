@@ -32,6 +32,24 @@ class CustomerHandler implements IHandler
      */
     public function handle(IFilter $filter)
     {
+        echo $this->getView($this->getData($filter));
+    }
+
+    /**
+     * @param array $arr
+     * @return string
+     */
+    public function getView(array $arr): string
+    {
+        return implode('<br>', $arr);
+    }
+
+    /**
+     * @param IFilter $filter
+     * @return array
+     */
+    public function getData(IFilter $filter): array
+    {
         $query = sprintf(
             "SELECT c.*  (SELECT count(*) FROM books_customers bc WHERE bc.customer_id = c.id ) as book_count FROM customers c 
               INNER JOIN books_customers b on b.customer_id = c.id
@@ -43,21 +61,11 @@ class CustomerHandler implements IHandler
             $filter->getYearEnd()
         );
 
-        echo $this->getView($query);
-    }
-
-    /**
-     * @param string $query
-     * @return string
-     */
-    public function getView(string $query): string
-    {
         $arr = [];
 
         foreach ($this->provider->getObjects($query, CustomerModel::class) as $customer) {
             $arr[] = $customer->render();
         }
-
-        return implode('<br>', $arr);
+        return $arr;
     }
 }
